@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rl-portfolio-allocation-research"
+version = "0.1.0"
+description = "Leakage-aware PPO and Soft Actor-Critic portfolio allocation benchmark"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "torch>=2.1", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+rl-portfolio = "rl_portfolio.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
